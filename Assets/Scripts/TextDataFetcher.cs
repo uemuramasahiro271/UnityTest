@@ -1,26 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Destroyer : MonoBehaviour
+public class TextDataFetcher : MonoBehaviour
 {
-    public GameObject masterObj;
+    public Text resultMessageText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        resultMessageText.text = DataSender.resultMessage;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        masterObj.GetComponent<GameMaster>().boxNum--;
-        Destroy(gameObject);
     }
 }
